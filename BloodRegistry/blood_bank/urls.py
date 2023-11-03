@@ -1,0 +1,35 @@
+from django.contrib import admin
+from django.urls import path, include
+from .views import dResult,home,donorreg,collectsample,collectionlist,bloodstate,hindex,requestsample,orderedsample,viewportal, about, bbreg, blogin, h_reg, hlogin, login_blood, login_hosp ,dreg, collect_blood_sample, request_sample, changeState, sampleList, orderBloodSample,viewagreement, hregister, bregister, donor, formAgreement
+
+urlpatterns = [
+    path('', home, name="home"),
+    path('dResult',dResult,name="dResult"),
+    path('about', about, name="about"),
+    path('bbreg',bbreg, name='bbreg'),
+    path('login_blood',login_blood, name='login_blood'),
+    path('blogin', blogin, name = 'blogin'),
+    path('login_hosp',login_hosp,name="login_hosp"),
+    path('donor',donor, name='donor'),
+    path('hreg',h_reg,name='hreg'),
+    path('hlogin',hlogin,name='hlogin'),
+    path('dreg',dreg,name='dreg'),
+    path('bregister',bregister,name="bregister"),
+    path('hregister',hregister,name="hregister"),
+    path('donorreg',donorreg, name='donorreg'),
+    path('collectsample',collectsample, name='collectsample'),
+    path('collectionlist',collectionlist, name='collectionlist'),
+    path('bloodstate',bloodstate, name='bloodstate'),
+    path('collectSample',collect_blood_sample, name='collectSample'),
+    path('requestSample',request_sample,name='requestSample'),
+    path('changeState',changeState,name='changeState'),
+    path('changeState',changeState,name='changeState'),
+    path('hindex',hindex,name='hindex'),
+    path('requestsample',requestsample,name='requestsample'),
+    path('orderedsample',orderedsample,name='orderedsample'),
+    path('sampleList',sampleList,name='sampleList'),
+    path('viewportal',viewportal,name='viewportal'),
+    path('formAgreement',formAgreement,name='formAgreement'),
+    path('orderBloodSample',orderBloodSample,name='orderBloodSample'),
+    path('viewagreement',viewagreement,name='viewagreement'),
+]

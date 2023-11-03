@@ -182,6 +182,102 @@
                 <h1>Welcome,</h1>
                 <h2>{{ name }}</h2>
             </div>
+            <!-- <section>
+                <div id="donor" class="register-HL">
+                    <h1 class="register-head">DONOR REGISTRATION</h1>
+                    <form class="box" action="{% url 'dreg' %} " method="post">
+                        {% csrf_token %}
+                        <input type="text" name="name" placeholder="Name">
+                        <input type="text" name="DOB" placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')">
+                        <input type="email" name="email" placeholder="E-mail">
+                        <label for="blood">Blood Type</label>
+                        <select name="blood" id="blood">
+                            <option value="O+">O +</option>
+                            <option value="O-">O -</option>
+                            <option value="A+" selected>A +</option>
+                            <option value="A-">A -</option>
+                            <option value="B+">B +</option>
+                            <option value="B-">B -</option>
+                            <option value="AB+">AB +</option>
+                            <option value="AB-">AB -</option>
+                        </select>
+                        <input type="number" name="aadhar" placeholder="Aadhar Number">
+                        <input type="password" name="password" placeholder="Enter Password">
+                        <input type="submit" value="SUBMIT">
+                    </form>
+                </div>
+                <div id="sample" class="register-HL DS">
+                    <h1 class="register-head">COLLECT SAMPLE</h1>
+                    <form class="box" action="{% url 'collectSample' %}" method="post">
+                        {% csrf_token %}
+                        <label for="blood">Blood Type</label>
+                        <select name="blood" id="blood">
+                            <option value="O+">O +</option>
+                            <option value="O-">O -</option>
+                            <option value="A+" selected>A +</option>
+                            <option value="A-">A -</option>
+                            <option value="B+">B +</option>
+                            <option value="B-">B -</option>
+                            <option value="AB+">AB +</option>
+                            <option value="AB-">AB -</option>
+                        </select>
+                        <input type="text" name="Donorid" placeholder="Donor ID">
+                        <input type="submit" value="SUBMIT">
+                    </form>
+                </div>
+                <div id="sample-table">
+                   <div class="table-container">
+                    <h1 class="register-head" style="text-align: center; margin-top: 0;">COLLECTED BLOOD SAMPLES</h1>
+                    <table class="table table-dark table1" >
+                        <thead>
+                            <th> Donor </th>
+                            <th> Blood Bank </th>
+                            <th> Sample </th>
+                            <th> Blood Type </th>
+                            <th> State </th>
+                        </thead>
+                        <tbody>
+                        {% for sample in samples %}
+                            <tr class="table-active">
+                                <td>{{ sample.d_id }}</td>
+                                <td>{{ sample.bb_id }}</td>
+                                <td>{{ sample.blood_id }}</td>
+                                <td>{{ sample.blood_type }}</td>
+                                <td>{{ sample.state }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+                <div id="changeState" class="register-HL DS">
+                    <h1 class="register-head">Change State</h1>
+                    <form class="box" action="{% url 'changeState' %}" method="post">
+                        {% csrf_token %}
+                        <label for="blood_id">Blood Sample ID</label>
+                        <br>
+                        <select name="blood_id" id="blood_id" >
+                            <option selected style="padding:5px;">Select Blood Sample ID</option>
+                            {% for sample in samples %}
+                                {% if sample.state not in not_allowed_states %}
+                                    <option value="{{ sample.blood_id }}" style="padding:5px;">{{ sample.blood_id }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                        <br>
+                        <br>
+                        <label for="state">State</label>
+                        <br>
+                        <select name="state" id="state">
+                            <option value="0">Collected</option>
+                            <option value="1">Tested OK</option>
+                            <option value="2">Tested NOT OK</option>
+                            <option value="3">Expired</option>
+                        </select>
+                        <input type="submit" value="SUBMIT">
+                    </form>
+                </div>
+            </section> -->
         </div>
     </main>
 
