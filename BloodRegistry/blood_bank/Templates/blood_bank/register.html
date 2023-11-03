@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>Register</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+
+
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <!-- Custom Fonts from Google -->
+    <link
+        href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav id="siteNav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Logo and responsive toggle -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    BLOOD REGISTRY
+                </a>
+            </div>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="active_page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li>
+                        <a class="active_page" href="{% url 'about' %}">About</a>
+                    </li>
+                    <li class="active">
+                        <a class="active_page" href="{% url 'register' %}">Blood Bank</a>
+                    </li>
+                    <li>
+                        <a class="active_page" href="{% url 'register' %}">Hospital</a>
+                    </li>
+
+                </ul>
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>
+
+    <header class="login-form">
+        <div class="header-content Mainhead">
+            <div class="header-content-inner ">
+                <div class="loader Rheadings Rpage">
+                    <h1>REGISTRATION</h1>
+                    <h1>REGISTRATION </h1>
+                </div>
+            </div>
+        </div>
+        <div class="header-content hc-login">
+                <div class="btn-1">
+                    <a href="#bloodbank"><span>BLOOD BANK</span></a>
+                </div>
+                <div class="btn-1">
+                    <a href="#hospital"><span>HOSPITAL</span></a>
+                </div>
+        </div>
+        {% if registered %}
+            <div class="alert alert-success" role="alert">
+                ID Generated Successfully: {{ id }}
+            </div>
+        {% endif %}
+    </header>
+
+    <div id="hospital" class="register-HL">
+        <h1 class="register-head">HOSPITAL REGISTRATION</h1>
+        <form class="box" action="{% url 'hreg' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="Location" placeholder="Location">
+            <input type="email" name="email" placeholder="E-mail">
+            <input type="number" name="License" placeholder="Health License Number">
+            <input type="password" id="hpassword" name="password" placeholder="Create Password">
+            <input type="password" id="hcnfrm-password" name="password" onkeyup="hcheckPassword();" placeholder="Confirm Password">
+            <p id="hmessage"></p>
+            <input type="submit" class="submitbutton" id="hsubmit" value="SUBMIT">
+        </form>
+    </div>
+    <div id="bloodbank" class="login-BB register-m">
+        <h1 class="register-head RH">BLOOD BANK REGISTRATION</h1>
+        <form class="box" action="{% url 'bbreg' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="Location" placeholder="Location">
+            <input type="email" name="email" placeholder="E-mail">
+            <input type="number" name="License" placeholder="License Number">
+            <input type="password" id="bbpassword"  name="password" placeholder="Create Password">
+            <input type="password" id="bbcnfrm-password" name="password" onKeyUp="bbcheckPassword();" placeholder="Confirm Password">
+            <span id="bbmessage"></span>
+            <input type="submit" class="submitbutton"  id = "bbsubmit" value="SUBMIT">
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+
+        <!-- Contact Us -->
+{#        <div class="contact">#}
+{#            <h2 class="section-heading">Contact Us</h2>#}
+{#            <p><span class="glyphicon glyphicon-earphone"></span><br> +1(23) 456 7890</p>#}
+{#            <p><span class="glyphicon glyphicon-envelope"></span><br> bloodregistry@.com</p>#}
+{#        </div>#}
+
+        <!-- Copyright etc -->
+        <div class="copy-container">
+            <div class="">
+                <p>Copyright&copy;2022 Blood Bank Registry</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+
+    <!-- Custom Javascript -->
+    <script src="{% static 'js/custom.js' %}"></script>
+
+</body>

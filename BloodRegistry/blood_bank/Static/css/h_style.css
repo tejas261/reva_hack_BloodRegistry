@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@700&display=swap');
+html{
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #fbfbfb;
+}
+@media (min-width: 991.98px) {
+  main {
+    padding-left: 240px;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  width: 240px;
+  z-index: 10000;
+  background:#010818 !important;
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+.sidebar .active {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.loader{ 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    text-transform: uppercase;
+    font-family: 'Signika', sans-serif;  
+}
+
+.loader h1{
+  font-size: 60px;
+  letter-spacing: 2px;
+}
+.loader h2{
+  font-size: 40px;
+  letter-spacing: 2px;
+}
+
+.buttons{
+  display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.btn-1 a{
+  text-decoration: none;
+  border: 2px solid red;
+  padding: 15px;
+  color: black;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  position: relative;
+  top: 50%;
+  display: inline-block;
+    width: 15vw;
+}
+.submitbtn{
+  text-decoration: none;
+  border: 2px solid red;
+  padding: 15px;
+  color: black;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  position: relative;
+  top: 50%;
+  display: inline-block;
+    width: 15vw;
+}
+span {
+  position: relative;
+  /* z-index coz when we put bg to before and after this span text will not be visible */
+  z-index: 100;
+}
+
+/* Button 1 styles */
+
+.btn-1 a::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -2px;
+  width: calc(100% + 6px);
+  /*100% plus double the times left values*/
+  height: calc(100% - 10px);
+  background-color: #fff;
+  transition: all 0.5s ease-in-out;
+  transform: scaleY(1);
+}
+
+.btn-1 a:hover::before {
+  transform: scaleY(0);
+}
+
+.btn-1 a::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: -5px;
+  width: calc(100% - 10px);
+  /*100% plus double the times left values*/
+  height: calc(100% + 10px);
+  background-color:#fff;
+  transition: all 0.5s ease-in-out;
+  transform: scaleX(1);
+}
+
+.btn-1 a:hover::after{
+  transform: scaleX(0);
+}
+.navbar-brand{
+  color: #fff;
+  letter-spacing: 2px !important;
+  margin-top: -15px;
+  margin-bottom:20px;
+}
+
+
+.register-HL{
+    display: flex;
+    background: rgb(251 251 251);
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    right: 28%;
+}
+.register-head{
+    margin-top: 20%;
+    color: black;
+    font-family: 'Signika', sans-serif;   
+    letter-spacing: 5px;
+    font-size: 40px;
+}
+.register-m{
+    height: 180vh !important;
+    justify-content: flex-start !important;
+
+}
+.RH{
+    letter-spacing: 3px !important;
+}
+
+
+.box{
+  width: 300px;
+  padding: 10px 20px 0;
+  /* position: absolute;
+  top: 50%;
+  left: 75%; */
+  /* transform: translate(-50%,-50%); */
+  text-align: center;
+  /* border: 3px solid #000514; */
+  border-radius: 20px 20px;
+  /* box-shadow: 2px 2px 2px #d43e4e; */
+  transition: 5s all;
+}
+.box input[type = "text"],.box input[type = "password"],.box input[type = "email"],.box input[type = "number"],.box input[type = "date"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 40px auto;
+  text-align: center;
+  border-bottom: 3px solid rgb(255, 0, 0);
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color:black;
+  border-radius: 24px;
+  transition: 0.5s;
+}
+.box input[type = "text"]:focus,.box input[type = "password"]:focus,.box input[type = "email"]:focus,.box input[type = "number"]:focus,.box input[type = "date"]:focus{
+  border-color: #A04000;
+  width: 250px;
+}
+.box input[type = "text"]:hover,.box input[type = "password"]:hover,.box input[type = "email"]:hover,.box input[type = "number"]:hover,.box input[type = "date"]:hover{
+  border-color: #A04000;
+}
+.box input[type = "submit"],.box input[type = "button"]{
+  border:0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  margin-top: 40px;
+  text-align: center;
+  border: 2px solid #d40d0d;
+  padding: 14px 40px;
+  outline: none;
+  color: black;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.box input[type = "submit"]:focus,.box input[type = "button"]:focus{
+  /* border-color: #D4AC0D; */
+}
+.box input[type = "submit"]:hover,.box input[type = "button"]:hover{
+
+  border-radius: 24px;
+}
+section{
+  height: 100vh;
+}
+.table1{
+      --bs-table-bg:#010818 !important ;
+      --bs-table-active-bg::#010818 !important;
+}
+.table-container{
+  height: 80vh;
+    display: flex;
+    align-content: flex-start;
+    flex-direction: column;
+    margin: 2%;
+    justify-content: space-evenly;
+}
+select{
+    border:0;
+  background: none;
+  display: block;
+  margin: 40px auto;
+  text-align: center;
+  border-bottom: 3px solid rgb(255, 0, 0);
+  padding: 14px 10px;
+  width: 250px;
+  outline: none;
+  color:black;
+  border-radius: 24px;
+  transition: 0.5s;
+}
+option{
+  text-align: center;
+}

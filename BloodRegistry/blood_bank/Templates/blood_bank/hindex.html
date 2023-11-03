@@ -1,0 +1,168 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}" />
+
+
+    <title>Blood Bank</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.min.css"
+        integrity="sha512-hj9rznBPdFg9A4fACbJcp4ttzdinMDtPrtZ3gBD11DiY3O1xJfn0r1U5so/J0zwfGOzq9teIaH5rFmjFAFw8SA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/bb_style.css' %}">
+</head>
+
+<body>
+    <!--Main Navigation-->
+    <header>
+        <!-- Sidebar -->
+        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+            <div class="position-sticky">
+                <div class="list-group list-group-flush mx-3 mt-4">
+                    <!-- Brand -->
+                    <a class="navbar-brand" href="#">
+                        HOSPITAL
+                    </a>
+                    <a href="{% url 'hindex' %}" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
+                        <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main Dashboard</span>
+
+                    </a>
+                    <a href="{% url 'requestsample' %}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                        <i class="fab fa-wpforms fa-fw me-3"></i><span>Request Sample</span>
+                    </a>
+
+                    <a href="{% url 'orderedsample' %}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                        <i class="fas fa-syringe fa-fw me-3"></i><span>Ordered Samples</span>
+                    </a>
+                    <a href="{% url 'home' %}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                        <i class="fas fa-sign-out-alt fa-fw me-3"></i><span>Logout</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <!-- Sidebar -->
+
+        <!-- Navbar -->
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggle button -->
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+                    aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Right links -->
+                <ul class="navbar-nav ms-auto d-flex flex-row">
+                    <!-- Notification dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link  hidden-arrow d-flex align-items-center" href="#"
+                            id="navbarDropdownMenuLink" aria-expanded="false">
+                            {{ id }}
+                        </a>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#"
+                            id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li>
+                                <a class="dropdown-item" href="#">Name: {{ name }}</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Licence Number: {{ licence }}</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Email: {{ email }}</a>
+                            </li>
+{#                            <li>#}
+{#                                <a class="dropdown-item" href="#">Address: {{ address }} </a>#}
+{#                            </li>#}
+
+                        </ul>
+                    </li>
+                    <!-- Avatar -->
+
+                </ul>
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <main style="margin-top: 58px; height: 100vh;">
+        <div class="container">
+            
+            <div class="loader" style="max-height: 200px">
+                <h1>Welcome,</h1>
+                <h2>{{ name }}</h2>
+            </div>
+            <div id="map" style="width: 80%; height: 450px; margin: auto;"></div>
+
+            <script
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4c5YuMdxyROy-tbwBACeIiy-aftG7_WI&callback=initMap&v=weekly"
+              defer></script>
+            <script>
+                function initMap() {
+                    // console.log("{{lat}}")
+                    // l = parseFloat("{{lat}}")
+                    // lo = parseFloat("{{lng}}")
+                    var data = JSON.parse("{{pos|escapejs}}")
+                    console.log(data)
+                    const hosp = { lat: parseFloat(data.lat), lng: parseFloat(data.longi)}
+                    const bb_locs = [['l1',12.900,77.481 ],['l2',12.934,77.601 ],['l3',12.964,77.601 ]];
+                    // The map, centered at Uluru
+                    const map = new google.maps.Map(document.getElementById("map"), {
+                        zoom: 11,
+                        center: hosp,
+                    });
+                    const mark = new google.maps.Marker({
+                        position: new google.maps.LatLng(hosp['lat'], hosp['lng']),
+                        icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+                        map: map
+                    });
+                    
+                    // The marker, positioned at Uluru
+                    var count, marker;
+                    for(count=0;count<bb_locs.length;count++){
+                            const marker = new google.maps.Marker({
+                            position: new google.maps.LatLng(bb_locs[count][1], bb_locs[count][2]),
+                            map: map,
+                            title: bb_locs[count][0],
+                            lable: 'H',
+                            animation : google.maps.Animation.DROP
+                        });
+                    }
+                }
+        
+                window.initMap = initMap;
+            </script>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/js/mdb.min.js"
+        integrity="sha512-XFd1m0eHgU1F05yOmuzEklFHtiacLVbtdBufAyZwFR0zfcq7vc6iJuxerGPyVFOXlPGgM8Uhem9gwzMI8SJ5uw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{% static 'js/bb_custom.js' %}"></script>
+</body>
+
+</html>

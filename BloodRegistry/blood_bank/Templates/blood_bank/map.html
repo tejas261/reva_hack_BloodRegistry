@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+  <head>
+    <title>Add Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map" style="width: 100%; height: 400px"></div>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script>
+    <script>
+        function initMap() {
+
+  const hosp = { lat: 12.944, lng: 77.531 }
+  const bb_locs = [['l1',12.900,77.481 ],['l2',12.934,77.601 ],['l3',12.964,77.601 ], ['l4',12.954,77.511 ], ['l5',12.924,77.581 ], ['l6',12.944,77.541 ]];
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 11,
+    center: hosp,
+  });
+  const mark = new google.maps.Marker({
+    position: new google.maps.LatLng(hosp['lat'], hosp['lng']),
+    icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+    map: map
+  });
+
+  // The marker, positioned at Uluru
+  var count, marker;
+  for(count=0;count<bb_locs.length;count++){
+    const marker = new google.maps.Marker({
+    position: new google.maps.LatLng(bb_locs[count][1], bb_locs[count][2]),
+    map: map,
+    title: bb_locs[count][0],
+    lable: 'H',
+    animation : google.maps.Animation.DROP
+  });
+  }
+}
+
+window.initMap = initMap;
+    </script>
+  </body>
+</html>
