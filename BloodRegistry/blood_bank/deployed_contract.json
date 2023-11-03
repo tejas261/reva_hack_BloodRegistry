@@ -1,0 +1,658 @@
+{
+  "HospitalRegistry.sol": {
+    "abi": [
+      {
+        "inputs": [
+          { "internalType": "string", "name": "h_name", "type": "string" },
+          { "internalType": "string", "name": "h_id", "type": "string" },
+          { "internalType": "string", "name": "h_email", "type": "string" },
+          {
+            "internalType": "string",
+            "name": "h_licence_no",
+            "type": "string"
+          },
+          { "internalType": "string", "name": "h_pwd", "type": "string" },
+          { "internalType": "string", "name": "h_address", "type": "string" },
+          { "internalType": "string", "name": "h_lat", "type": "string" },
+          { "internalType": "string", "name": "h_long", "type": "string" }
+        ],
+        "name": "add",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "name": "hospitals",
+        "outputs": [
+          { "internalType": "string", "name": "h_name", "type": "string" },
+          { "internalType": "string", "name": "h_id", "type": "string" },
+          { "internalType": "string", "name": "h_email", "type": "string" },
+          {
+            "internalType": "string",
+            "name": "h_licence_no",
+            "type": "string"
+          },
+          { "internalType": "string", "name": "h_pwd", "type": "string" },
+          { "internalType": "string", "name": "h_address", "type": "string" },
+          { "internalType": "string", "name": "h_lat", "type": "string" },
+          { "internalType": "string", "name": "h_long", "type": "string" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [{ "internalType": "string", "name": "", "type": "string" }],
+        "name": "index_to_hospital",
+        "outputs": [
+          { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "h_id", "type": "string" }
+        ],
+        "name": "login",
+        "outputs": [
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "string", "name": "", "type": "string" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ],
+    "contract_address": "0xf93060D8c74169a4FaFd195a8bD6A681e5770D02"
+  },
+  "BloodBankRegistry.sol": {
+    "abi": [
+      {
+        "inputs": [
+          { "internalType": "string", "name": "bb_name", "type": "string" },
+          { "internalType": "string", "name": "bb_id", "type": "string" },
+          { "internalType": "string", "name": "bb_email", "type": "string" },
+          {
+            "internalType": "string",
+            "name": "bb_licence_no",
+            "type": "string"
+          },
+          { "internalType": "string", "name": "bb_pwd", "type": "string" },
+          { "internalType": "string", "name": "bb_address", "type": "string" },
+          { "internalType": "string", "name": "bb_lat", "type": "string" },
+          { "internalType": "string", "name": "bb_long", "type": "string" }
+        ],
+        "name": "add",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "name": "bank",
+        "outputs": [
+          { "internalType": "string", "name": "bb_name", "type": "string" },
+          { "internalType": "string", "name": "bb_id", "type": "string" },
+          { "internalType": "string", "name": "bb_email", "type": "string" },
+          {
+            "internalType": "string",
+            "name": "bb_licence_no",
+            "type": "string"
+          },
+          { "internalType": "string", "name": "bb_pwd", "type": "string" },
+          { "internalType": "string", "name": "bb_address", "type": "string" },
+          { "internalType": "string", "name": "bb_lat", "type": "string" },
+          { "internalType": "string", "name": "bb_long", "type": "string" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [{ "internalType": "string", "name": "", "type": "string" }],
+        "name": "index_to_bank",
+        "outputs": [
+          { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "bb_id", "type": "string" }
+        ],
+        "name": "login",
+        "outputs": [
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "string", "name": "", "type": "string" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ],
+    "contract_address": "0x00bf7b09B2799A115c738dd51D5644C2B9Fe039b"
+  },
+  "BloodSample.sol": {
+    "abi": [
+      {
+        "inputs": [
+          { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "name": "agreements",
+        "outputs": [
+          {
+            "internalType": "contract Agreement",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "name": "bb_id_to_blood_bags_index",
+        "outputs": [
+          { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "bb_id", "type": "string" }
+        ],
+        "name": "bbank_no_samples_collected",
+        "outputs": [
+          {
+            "components": [
+              { "internalType": "string", "name": "d_id", "type": "string" },
+              { "internalType": "string", "name": "bb_id", "type": "string" },
+              {
+                "internalType": "string",
+                "name": "blood_id",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "blood_type",
+                "type": "string"
+              },
+              {
+                "internalType": "enum BloodSample.BLOOD_STATUS",
+                "name": "state",
+                "type": "uint8"
+              },
+              {
+                "internalType": "string",
+                "name": "date_collected",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct BloodSample.blood[]",
+            "name": "",
+            "type": "tuple[]"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "name": "bloodBags",
+        "outputs": [
+          { "internalType": "string", "name": "d_id", "type": "string" },
+          { "internalType": "string", "name": "bb_id", "type": "string" },
+          { "internalType": "string", "name": "blood_id", "type": "string" },
+          { "internalType": "string", "name": "blood_type", "type": "string" },
+          {
+            "internalType": "enum BloodSample.BLOOD_STATUS",
+            "name": "state",
+            "type": "uint8"
+          },
+          {
+            "internalType": "string",
+            "name": "date_collected",
+            "type": "string"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "d_id", "type": "string" },
+          { "internalType": "string", "name": "bb_id", "type": "string" },
+          { "internalType": "string", "name": "blood_id", "type": "string" },
+          { "internalType": "string", "name": "blood_type", "type": "string" },
+          {
+            "internalType": "string",
+            "name": "date_collected",
+            "type": "string"
+          }
+        ],
+        "name": "collected",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "name": "d_id_to_blood_bags_index",
+        "outputs": [
+          { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "blood_type", "type": "string" }
+        ],
+        "name": "eligible_blood_bags",
+        "outputs": [
+          {
+            "components": [
+              { "internalType": "string", "name": "d_id", "type": "string" },
+              { "internalType": "string", "name": "bb_id", "type": "string" },
+              {
+                "internalType": "string",
+                "name": "blood_id",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "blood_type",
+                "type": "string"
+              },
+              {
+                "internalType": "enum BloodSample.BLOOD_STATUS",
+                "name": "state",
+                "type": "uint8"
+              },
+              {
+                "internalType": "string",
+                "name": "date_collected",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct BloodSample.blood[]",
+            "name": "",
+            "type": "tuple[]"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "blood_id", "type": "string" }
+        ],
+        "name": "expired",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "bb_id", "type": "string" }
+        ],
+        "name": "expired_blood_samples",
+        "outputs": [
+          {
+            "components": [
+              { "internalType": "string", "name": "d_id", "type": "string" },
+              { "internalType": "string", "name": "bb_id", "type": "string" },
+              {
+                "internalType": "string",
+                "name": "blood_id",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "blood_type",
+                "type": "string"
+              },
+              {
+                "internalType": "enum BloodSample.BLOOD_STATUS",
+                "name": "state",
+                "type": "uint8"
+              },
+              {
+                "internalType": "string",
+                "name": "date_collected",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct BloodSample.blood[]",
+            "name": "",
+            "type": "tuple[]"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "blood_id", "type": "string" }
+        ],
+        "name": "expiry_check",
+        "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "address", "name": "add", "type": "address" }
+        ],
+        "name": "get_agreement_details",
+        "outputs": [
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "string", "name": "", "type": "string" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [{ "internalType": "string", "name": "", "type": "string" }],
+        "name": "index_to_blood_bag",
+        "outputs": [
+          { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "bb_id", "type": "string" }
+        ],
+        "name": "query_agreement_for_bloodbank",
+        "outputs": [
+          {
+            "internalType": "contract Agreement[]",
+            "name": "",
+            "type": "address[]"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "h_id", "type": "string" }
+        ],
+        "name": "query_agreement_for_hospital",
+        "outputs": [
+          {
+            "internalType": "contract Agreement[]",
+            "name": "",
+            "type": "address[]"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "blood_id", "type": "string" }
+        ],
+        "name": "request_check",
+        "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "blood_id", "type": "string" },
+          { "internalType": "string", "name": "h_id", "type": "string" },
+          { "internalType": "string", "name": "a_id", "type": "string" }
+        ],
+        "name": "requested",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "blood_id", "type": "string" }
+        ],
+        "name": "sent",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "bb_id", "type": "string" }
+        ],
+        "name": "sent_blood_samples",
+        "outputs": [
+          {
+            "components": [
+              { "internalType": "string", "name": "d_id", "type": "string" },
+              { "internalType": "string", "name": "bb_id", "type": "string" },
+              {
+                "internalType": "string",
+                "name": "blood_id",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "blood_type",
+                "type": "string"
+              },
+              {
+                "internalType": "enum BloodSample.BLOOD_STATUS",
+                "name": "state",
+                "type": "uint8"
+              },
+              {
+                "internalType": "string",
+                "name": "date_collected",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct BloodSample.blood[]",
+            "name": "",
+            "type": "tuple[]"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "blood_id", "type": "string" },
+          { "internalType": "string", "name": "test", "type": "string" }
+        ],
+        "name": "tested",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      }
+    ],
+    "contract_address": "0x75860DEdd94FfC6477ED596b87B7f7775fFEc751"
+  },
+  "Donor.sol": {
+    "abi": [
+      {
+        "inputs": [
+          { "internalType": "string", "name": "d_name", "type": "string" },
+          { "internalType": "string", "name": "d_id", "type": "string" },
+          { "internalType": "string", "name": "d_email", "type": "string" },
+          { "internalType": "string", "name": "d_aadhar_no", "type": "string" },
+          {
+            "internalType": "string",
+            "name": "d_blood_type",
+            "type": "string"
+          },
+          { "internalType": "string", "name": "d_dob", "type": "string" }
+        ],
+        "name": "badd",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "d_id", "type": "string" }
+        ],
+        "name": "block_donor",
+        "outputs": [
+          {
+            "components": [
+              { "internalType": "string", "name": "d_name", "type": "string" },
+              { "internalType": "string", "name": "d_id", "type": "string" },
+              { "internalType": "string", "name": "d_email", "type": "string" },
+              {
+                "internalType": "string",
+                "name": "d_aadhar_no",
+                "type": "string"
+              },
+              { "internalType": "string", "name": "d_dob", "type": "string" },
+              {
+                "internalType": "string",
+                "name": "d_blood_type",
+                "type": "string"
+              },
+              {
+                "internalType": "uint256",
+                "name": "blocked",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct BloodDonor.Donor",
+            "name": "",
+            "type": "tuple"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "d_id", "type": "string" }
+        ],
+        "name": "blogin",
+        "outputs": [
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "string", "name": "", "type": "string" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "d_id", "type": "string" }
+        ],
+        "name": "check_blocked",
+        "outputs": [
+          { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "string", "name": "d_id", "type": "string" }
+        ],
+        "name": "donor_details_from_aadhar",
+        "outputs": [
+          { "internalType": "string", "name": "", "type": "string" },
+          { "internalType": "string", "name": "", "type": "string" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "donor_view",
+        "outputs": [
+          {
+            "components": [
+              { "internalType": "string", "name": "d_name", "type": "string" },
+              { "internalType": "string", "name": "d_id", "type": "string" },
+              { "internalType": "string", "name": "d_email", "type": "string" },
+              {
+                "internalType": "string",
+                "name": "d_aadhar_no",
+                "type": "string"
+              },
+              { "internalType": "string", "name": "d_dob", "type": "string" },
+              {
+                "internalType": "string",
+                "name": "d_blood_type",
+                "type": "string"
+              },
+              {
+                "internalType": "uint256",
+                "name": "blocked",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct BloodDonor.Donor[]",
+            "name": "",
+            "type": "tuple[]"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "name": "donors",
+        "outputs": [
+          { "internalType": "string", "name": "d_name", "type": "string" },
+          { "internalType": "string", "name": "d_id", "type": "string" },
+          { "internalType": "string", "name": "d_email", "type": "string" },
+          { "internalType": "string", "name": "d_aadhar_no", "type": "string" },
+          { "internalType": "string", "name": "d_dob", "type": "string" },
+          {
+            "internalType": "string",
+            "name": "d_blood_type",
+            "type": "string"
+          },
+          { "internalType": "uint256", "name": "blocked", "type": "uint256" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [{ "internalType": "string", "name": "", "type": "string" }],
+        "name": "index_to_donor",
+        "outputs": [
+          { "internalType": "uint256", "name": "", "type": "uint256" }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ],
+    "contract_address": "0x8CE82a1709d2E3c1e69ebF9485Fbdb0218a48853"
+  }
+}

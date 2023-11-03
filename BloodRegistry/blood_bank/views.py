@@ -7,9 +7,9 @@ from django.contrib import messages
 import datetime
 from haversine import haversine, Unit
 
-from PIL import Image,ImageDraw,ImageFont
+from PIL import Image, ImageDraw, ImageFont
 import os
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT = os.path.dirname(os.path.abspath(_file_))
 STATIC_ROOT = os.path.join(PROJECT_ROOT,'static')
 from .models import Members
 from .useful_scripts import generate_random_id, encrypt, decrypt, generate_random_no
@@ -379,6 +379,7 @@ def get_coordinates(loc):
     return coord
 
 
+
 def dResult(request):
     if request.POST:
         data = request.POST
@@ -402,5 +403,5 @@ def generate_cert(name,type):
     d.text((950,1240),str(datetime.date.today()),fill = '#33362f',font = oswald)
     d.text((1730,1240),str(type),fill = '#33362f',font = oswald)
     # im.show()
-    im.save(f"{STATIC_ROOT}/images/certificates/certificate.png")
+    im.save(f"blood_bank/Static/images/certificates/certificate.png")
     return 1
